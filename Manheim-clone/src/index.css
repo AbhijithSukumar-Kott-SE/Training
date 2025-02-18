@@ -1,0 +1,54 @@
+.nav-fontsize{
+    font-size: 0.75rem;
+}
+
+
+.navbar-nav {
+    gap: 10px; /* Adds spacing between nav items */
+}
+
+/* Center dropdown items properly */
+.dropdown-menu {
+    text-align: center;
+}
+
+/* Make buttons look better when collapsed */
+.navbar-nav .btn {
+    width: 100%; /* Full width in mobile */
+    text-align: center;
+}
+
+/* Open dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.footer {
+    background-color:rgba(6, 31, 107, 0.918);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.modal-bg-main{
+    background-color: rgba(6, 31, 107, 0.534);
+}
+
+
+
+.password-wrapper {
+    position: relative;
+}
+.password-wrapper .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#btnTerms:hover{
+  color: yellow;
+}

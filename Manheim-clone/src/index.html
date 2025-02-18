@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets//images/icons/AC.png" />
+    <title>Manheim Auctions</title>
+    <link rel="stylesheet" href="./bootstrap5/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./pages/home/home.css" />
+    
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-white pt-3 sticky-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="./assets/images/icons/Manheim_Logo_blue.svg"
+            alt="Logo"
+            height="100%"
+            width="100%"
+          />
+        </a>
+
+        <!-- Navbar Toggle Button (Mobile) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div
+          class="collapse navbar-collapse text-center nav-fontsize"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="#">
+                <i class="bi bi-calendar"></i> Upcoming Events
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-bold"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Manheim Services
+              </a>
+              <ul
+                class="dropdown-menu nav-fontsize"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item text-primary" href="#"
+                    >Buy At Manheim</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#"
+                    >Sell At Manheim</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#"
+                    >Auctions / Simulcast</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#"
+                    >Biding Information</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#">Bid Now</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#">Buy Now</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#"
+                    >Products And Services</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#">Finance</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-primary" href="#">Transport</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-bold"
+                href="#"
+                onclick="loadSection('about.html')"
+                >Car Price Guide</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-bold"
+                href="#"
+                onclick="loadSection('services.html')"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-bold"
+                href="#"
+                onclick="loadSection('contact.html')"
+                >Location</a
+              >
+            </li>
+
+            <!-- Small Logo (Better Styling) -->
+            <li class="nav-item">
+              <a
+                class="nav-link fw-bold"
+                href="#"
+                onclick="loadSection('contact.html')"
+              >
+                <img
+                  class="image-fluid"
+                  src="./assets/images/icons/SMC_sm_logo.png"
+                  alt="Logo"
+                />
+              </a>
+            </li>
+
+            <!-- Buttons - Placed in a Flexbox for Good Alignment -->
+            <li class="nav-item d-flex justify-content-center gap-2 mt-2">
+              <button class="btn btn-primary me-2" type="submit"  data-bs-toggle="modal"
+              data-bs-target="#loginModal">
+                <i class="bi bi-person"></i> Sign In
+              </button>
+            </li>
+            <li class="nav-item d-flex justify-content-center gap-2 mt-2">
+              <button
+                class="btn btn-warning me-2"
+                type="submit"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModal"
+              >
+                Register
+              </button>
+            </li>
+            <li class="nav-item d-flex justify-content-center gap-2 mt-2">
+              <button class="btn btn-light border me-2" type="submit">?</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-3">
+      <div class="row w-100 d-flex align-items-center">
+        <!-- Filter Dropdown -->
+        <div class="col-md-5">
+          <select class="form-select ms-2 mt-2" id="vehicleDropdown">
+            <option selected disabled>Select Vehicle</option>
+          </select>
+        </div>
+    
+        <!-- Model Dropdown -->
+        <div class="col-md-5">
+          <select class="form-select ms-2 mt-2" id="modelDropdown">
+            <option selected disabled>Select Model</option>
+          </select>
+        </div>
+    
+        <!-- Search Bar -->
+        <!-- <div class="col-md-3">
+          <div class="input-group ms-2 mt-2">
+            <input type="text" class="form-control" placeholder="Keyword Search..." />
+          </div>
+        </div> -->
+        <div class="col-md-2">
+          <button class="btn btn-primary ms-3 mt-2">Search</button>
+        </div>
+      </div>
+    </div>
+    
+    
+
+    <!-- Main Content Section (Dynamic Content Will Be Loaded Here) -->
+    <section id="content"></section>
+
+    <!--- Footer-->
+    <footer class="footer text-white pt-4 pb-2">
+      <div class="container">
+        <div class="row">
+          <!-- Logo & About -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="text-uppercase">Manheim Auctions</h5>
+            <p class="small">
+              The trusted marketplace for buying and selling used vehicles with
+              the best auction experience.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="text-uppercase">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Auctions</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Sell a Car</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="text-uppercase">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Auction St, New York,
+                USA
+              </li>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-envelope"></i> support@manheim.com</li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="text-uppercase">Follow Us</h5>
+            <div class="d-flex justify-content-center">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook fa-lg"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter fa-lg"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram fa-lg"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-linkedin fa-lg"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center border-top pt-3 mt-3">
+          <p class="mb-0">© 2025 Manheim Auctions. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals-->
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content text-white modal-bg-main">
+          <div class="card modal-bg-main shadow-lg p-5">
+            <div class="d-flex align-items-start justify-content-end">
+              <button type="button" class="btn-close btn-sm bg-white text-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="text-center text-white">
+              <h4 class="fs-6">Register With Manheim</h4>
+            </div>
+    
+            <form id="registerForm" class="text-white" novalidate>
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="regEmail" placeholder="Enter email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+    
+              <!-- Mobile Number -->
+              <div class="mb-3">
+                <label for="mobile" class="form-label">Mobile Number</label>
+                <input type="tel" class="form-control" id="mobile" placeholder="Enter mobile number" pattern="^[0-9]{10}$" required />
+                <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+              </div>
+    
+              <!-- Password with Eye Icon -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="regPassword" placeholder="Enter password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"/>
+                  <button class="btn btn-outline-light" type="button" id="regTogglePassword" onclick="passwordToggling('regPassword', 'regEye')">
+                    <i id="regEye" class="bi bi-eye"></i>
+                  </button>
+                  <div class="invalid-feedback">Password must be at least 8 characters, include an uppercase letter, lowercase letter, number, and a special character.</div>
+                </div>
+              </div>
+
+              <div class="mb-3 form-check">
+                <div class="d-flex justify-content-start align-items-center">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <button class="btn text-warning text-decoration-underline" data-bs-toggle="modal" data-bs-target="#termsModal">Agree To our Terms and Conditions</button>
+                </div>
+              </div>
+
+              
+    
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-warning w-100 fw-bold">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="termsModal" aria-hidden="true" aria-labelledby="termsModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-bg-main">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">Terms And Conditions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Hide this modal and show the first with the button below.
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-primary" data-bs-target="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content text-white modal-bg-main">
+          <div class="card modal-bg-main shadow-lg p-5">
+            <div class="d-flex align-items-start justify-content-end">
+              <button
+                type="button"
+                class="btn-close btn-sm bg-white text-dark"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="text-center text-white">
+              <h4 class="fs-6">Login</h4>
+            </div>
+
+            <form id="loginForm" class="modal-bg-main text-white" novalidate>
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  required
+                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                />
+                <div class="invalid-feedback">Password must be at least 8 characters, include an uppercase letter, lowercase letter, number, and a special character.</div>
+              </div>
+
+              <!-- Password with Eye Icon Inside Input -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                  />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                  <button
+                    class="btn btn-outline-light"
+                    type="button"
+                    id="togglePassword"
+                    onclick="passwordToggling('togglePassword')"
+                  >
+                    <i id="logEye" class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="btn btn-warning w-100 fw-bold"
+                data-bs-dismiss="modal"
+              >
+                SUBMIT
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Add Vehicle Info Modal -->
+    <div
+      class="modal fade"
+      id="addVehicleInfoModal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="addVehicleInfoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen modal-dialog-centered modal-lg">
+        <div class="modal-content text-white modal-bg-main">
+          <div class="card modal-bg-main shadow-lg p-5">
+            <div class="d-flex align-items-start justify-content-end">
+              <button
+                type="button"
+                class="btn-close btn-sm bg-white text-dark"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="text-center text-white">
+              <h4 class="fs-6">Add Vehicle Info</h4>
+            </div>
+
+            <form class="modal-bg-main text-white">
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  required
+                />
+                
+              </div>
+
+              <!-- Password with Eye Icon Inside Input -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                  />
+                  <button
+                    class="btn btn-outline-light"
+                    type="button"
+                    id="togglePassword"
+                    onclick="passwordToggling('togglePassword')"
+                  >
+                    <i id="logEye" class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="btn btn-warning w-100 fw-bold"
+                data-bs-dismiss="modal"
+              >
+                SUBMIT
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./bootstrap5/js/bootstrap.bundle.min.js"></script>
+    <!-- Global scripts needed-->
+    <script src="./scripts/global.js"></script>
+    <!---Custom Form validation scripts---->
+    <script src="./scripts/form_validations.js"></script>
+    <!-- JavaScript to Load Sections -->
+    <script src="./scripts/load_section.js"></script>
+    <script src="./scripts/load_vehicle_data.js"></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+{
+    "brands": [
+        {
+            "name": "Toyota",
+            "country": "Japan",
+            "founded": 1937,
+            "popular_models": ["Corolla", "Camry", "RAV4", "Land Cruiser"]
+        },
+        {
+            "name": "Honda",
+            "country": "Japan",
+            "founded": 1948,
+            "popular_models": ["Civic", "Accord", "CR-V", "Pilot"]
+        },
+        {
+            "name": "Ford",
+            "country": "USA",
+            "founded": 1903,
+            "popular_models": ["F-150", "Mustang", "Explorer", "Escape"]
+        },
+        {
+            "name": "Chevrolet",
+            "country": "USA",
+            "founded": 1911,
+            "popular_models": ["Silverado", "Camaro", "Malibu", "Tahoe"]
+        },
+        {
+            "name": "BMW",
+            "country": "Germany",
+            "founded": 1916,
+            "popular_models": ["3 Series", "5 Series", "X5", "M3"]
+        },
+        {
+            "name": "Mercedes-Benz",
+            "country": "Germany",
+            "founded": 1926,
+            "popular_models": ["C-Class", "E-Class", "S-Class", "GLE"]
+        },
+        {
+            "name": "Audi",
+            "country": "Germany",
+            "founded": 1910,
+            "popular_models": ["A4", "A6", "Q5", "R8"]
+        },
+        {
+            "name": "Volkswagen",
+            "country": "Germany",
+            "founded": 1937,
+            "popular_models": ["Golf", "Passat", "Tiguan", "Jetta"]
+        },
+        {
+            "name": "Hyundai",
+            "country": "South Korea",
+            "founded": 1967,
+            "popular_models": ["Elantra", "Santa Fe", "Tucson", "Sonata"]
+        },
+        {
+            "name": "Kia",
+            "country": "South Korea",
+            "founded": 1944,
+            "popular_models": ["Sportage", "Sorento", "Forte", "Telluride"]
+        },
+        {
+            "name": "Nissan",
+            "country": "Japan",
+            "founded": 1933,
+            "popular_models": ["Altima", "Rogue", "Sentra", "GT-R"]
+        },
+        {
+            "name": "Tesla",
+            "country": "USA",
+            "founded": 2003,
+            "popular_models": ["Model S", "Model 3", "Model X", "Model Y"]
+        },
+        {
+            "name": "Ferrari",
+            "country": "Italy",
+            "founded": 1939,
+            "popular_models": ["488 GTB", "F8 Tributo", "LaFerrari", "Portofino"]
+        },
+        {
+            "name": "Lamborghini",
+            "country": "Italy",
+            "founded": 1963,
+            "popular_models": ["Huracán", "Aventador", "Urus", "Gallardo"]
+        },
+        {
+            "name": "Porsche",
+            "country": "Germany",
+            "founded": 1931,
+            "popular_models": ["911", "Cayenne", "Panamera", "Taycan"]
+        },
+        {
+            "name": "Jaguar",
+            "country": "UK",
+            "founded": 1922,
+            "popular_models": ["XF", "F-Type", "F-Pace", "E-Pace"]
+        },
+        {
+            "name": "Land Rover",
+            "country": "UK",
+            "founded": 1948,
+            "popular_models": ["Range Rover", "Defender", "Discovery", "Evoque"]
+        },
+        {
+            "name": "Maserati",
+            "country": "Italy",
+            "founded": 1914,
+            "popular_models": ["Ghibli", "Levante", "Quattroporte", "MC20"]
+        },
+        {
+            "name": "Subaru",
+            "country": "Japan",
+            "founded": 1953,
+            "popular_models": ["Outback", "Forester", "WRX", "Impreza"]
+        },
+        {
+            "name": "Volvo",
+            "country": "Sweden",
+            "founded": 1927,
+            "popular_models": ["XC90", "S60", "V60", "XC60"]
+        }
+    ]
+}
